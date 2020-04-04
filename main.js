@@ -44,16 +44,21 @@ $ (document).ready(function(){
   // il pallino 3 rimane rosso)
 
   $ ('.fa-circle').click(
-    function(){
+    function() {
 
-    var statusCircle = $ ('.nav i.active');
-    statusCircle.removeClass('active');
-    statusCircle.next().addClass('active');
-    
+      var imgStatus = $ ('.images img.active');
+      var ballStatus = $ ('.nav i.active');
+      imgStatus.removeClass('active');
+      ballStatus.removeClass('active');
 
+      // Faccio corrispondere l'img al pallino
 
+      var imgBall = $ ('.nav i').index(this);
+      $ ('.images img').eq(imgBall).addClass('active');
+      $ (this).addClass('active');
 
-   }
+    }
+
  )
 
 
